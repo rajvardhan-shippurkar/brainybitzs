@@ -1,41 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { 
-  Youtube, 
-  Instagram, 
-  Twitter, 
-  Mail, 
-  Phone, 
-  MapPin,
-  ArrowRight
-} from "lucide-react";
-
+import { Youtube, Instagram, Twitter, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const footerLinks = {
-    content: [
-      { label: "YouTube Videos", href: "#videos" },
-      { label: "Instagram Reels", href: "#reels" },
-      { label: "Interactive Quizzes", href: "#quizzes" },
-      { label: "Daily Facts", href: "#facts" },
-    ],
-    learning: [
-      { label: "Learning Paths", href: "#paths" },
-      { label: "Progress Tracking", href: "#progress" },
-      { label: "Leaderboards", href: "#leaderboards" },
-      { label: "Certificates", href: "#certificates" },
-    ],
-    support: [
-      { label: "Help Center", href: "#help" },
-      { label: "Contact Us", href: "#contact" },
-      { label: "Privacy Policy", href: "#privacy" },
-      { label: "Terms of Service", href: "#terms" },
-    ]
+    content: [{
+      label: "YouTube Videos",
+      href: "#videos"
+    }, {
+      label: "Instagram Reels",
+      href: "#reels"
+    }, {
+      label: "Interactive Quizzes",
+      href: "#quizzes"
+    }, {
+      label: "Daily Facts",
+      href: "#facts"
+    }],
+    learning: [{
+      label: "Learning Paths",
+      href: "#paths"
+    }, {
+      label: "Progress Tracking",
+      href: "#progress"
+    }, {
+      label: "Leaderboards",
+      href: "#leaderboards"
+    }, {
+      label: "Certificates",
+      href: "#certificates"
+    }],
+    support: [{
+      label: "Help Center",
+      href: "#help"
+    }, {
+      label: "Contact Us",
+      href: "#contact"
+    }, {
+      label: "Privacy Policy",
+      href: "#privacy"
+    }, {
+      label: "Terms of Service",
+      href: "#terms"
+    }]
   };
-
-  return (
-    <footer className="bg-gradient-card border-t border-border">
+  return <footer className="bg-gradient-card border-t border-border">
       <div className="container mx-auto px-6">
         {/* Newsletter Section */}
         <div className="py-12 border-b border-border">
@@ -54,10 +63,7 @@ const Footer = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input 
-                placeholder="Enter your email address"
-                className="bg-background border-border flex-1"
-              />
+              <Input placeholder="Enter your email address" className="bg-background border-border flex-1" />
               <Button variant="hero">
                 Subscribe
                 <ArrowRight className="w-4 h-4" />
@@ -110,11 +116,11 @@ const Footer = () => {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-accent" />
-                  <span>hello@brainybitzs.com</span>
+                  <span>brainybitzs@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-accent" />
-                  <span>+1 (555) 123-LEARN</span>
+                  <span>-----</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-accent" />
@@ -127,16 +133,11 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Content</h4>
               <ul className="space-y-2">
-                {footerLinks.content.map((link) => (
-                  <li key={link.label}>
-                    <a 
-                      href={link.href}
-                      className="text-muted-foreground hover:text-accent transition-colors text-sm"
-                    >
+                {footerLinks.content.map(link => <li key={link.label}>
+                    <a href={link.href} className="text-muted-foreground hover:text-accent transition-colors text-sm">
                       {link.label}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -144,16 +145,11 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Learning</h4>
               <ul className="space-y-2">
-                {footerLinks.learning.map((link) => (
-                  <li key={link.label}>
-                    <a 
-                      href={link.href}
-                      className="text-muted-foreground hover:text-accent transition-colors text-sm"
-                    >
+                {footerLinks.learning.map(link => <li key={link.label}>
+                    <a href={link.href} className="text-muted-foreground hover:text-accent transition-colors text-sm">
                       {link.label}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -161,16 +157,11 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Support</h4>
               <ul className="space-y-2">
-                {footerLinks.support.map((link) => (
-                  <li key={link.label}>
-                    <a 
-                      href={link.href}
-                      className="text-muted-foreground hover:text-accent transition-colors text-sm"
-                    >
+                {footerLinks.support.map(link => <li key={link.label}>
+                    <a href={link.href} className="text-muted-foreground hover:text-accent transition-colors text-sm">
                       {link.label}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
@@ -200,8 +191,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
