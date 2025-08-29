@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Brain, Play, Camera, Users, BookOpen } from "lucide-react";
+import { Menu, X, Play, Camera, Users, BookOpen } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home", icon: Brain },
+    { label: "Home", href: "#home", icon: Play },
     { label: "Videos", href: "#videos", icon: Play },
     { label: "Reels", href: "#reels", icon: Camera },
     { label: "Quizzes", href: "#quizzes", icon: BookOpen },
@@ -19,8 +19,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
-              <Brain className="w-6 h-6 text-accent-foreground" />
+            <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <img src="/lovable-uploads/559334dc-77e8-47bd-8fc6-fb1e797a7e07.png" alt="BrainyBitzs Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent">
               BrainyBitzs

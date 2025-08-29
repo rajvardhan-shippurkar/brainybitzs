@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
-  Brain, 
   Youtube, 
   Instagram, 
   Twitter, 
@@ -77,8 +76,8 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
-                  <Brain className="w-7 h-7 text-accent-foreground" />
+                <div className="w-12 h-12 rounded-lg overflow-hidden">
+                  <img src="/lovable-uploads/559334dc-77e8-47bd-8fc6-fb1e797a7e07.png" alt="BrainyBitzs Logo" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent">
                   BrainyBitzs
