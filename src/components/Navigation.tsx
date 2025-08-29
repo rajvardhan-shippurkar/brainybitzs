@@ -7,10 +7,10 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Home", href: "#home", icon: Play },
-    { label: "Videos", href: "#videos", icon: Play },
-    { label: "Reels", href: "#reels", icon: Camera },
-    { label: "Quizzes", href: "#quizzes", icon: BookOpen },
+    { label: "YouTube", href: "https://youtube.com/@brainybitzs?feature=shared", icon: Play, external: true },
+    { label: "Instagram", href: "https://www.instagram.com/brainybitzs?igsh=dDV4dmFvMTBjdGl2", icon: Camera, external: true },
     { label: "About", href: "#about", icon: Users },
+    { label: "Contact", href: "#contact", icon: BookOpen },
   ];
 
   return (
@@ -33,6 +33,8 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-2 text-foreground hover:text-accent transition-colors group"
               >
                 <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -65,6 +67,8 @@ const Navigation = () => {
                 <a
                   key={item.label}
                   href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/10 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >

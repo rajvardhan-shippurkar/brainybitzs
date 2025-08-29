@@ -6,15 +6,18 @@ import instagramIcon from "@/assets/instagram-icon.png";
 import quizIcon from "@/assets/quiz-icon.png";
 
 const ContentShowcase = () => {
-  const contentTypes = [
+const contentTypes = [
     {
       title: "YouTube Videos",
-      description: "In-depth educational content covering science, nature, and fascinating facts",
+      description: "Short, engaging videos about science, technology, facts, and nature",
       icon: youtubeIcon,
       iconFallback: Play,
       color: "from-red-500 to-red-600",
-      stats: { videos: "150+", views: "2M+", duration: "5-15 min" },
-      features: ["High-quality explanations", "Visual demonstrations", "Step-by-step learning"]
+      stats: { videos: "100+", views: "500K+", duration: "30-60 sec" },
+      features: ["High-quality explanations", "Visual demonstrations"],
+      link: "https://youtube.com/@brainybitzs?feature=shared",
+      buttonText: "Watch on YouTube",
+      about: "BrainyBitzs YouTube channel shares short, engaging videos about science, technology, facts, and nature. With over 100 videos and 500K+ views, it's designed to make learning quick and impactful."
     },
     {
       title: "Instagram Reels",
@@ -22,8 +25,11 @@ const ContentShowcase = () => {
       icon: instagramIcon,
       iconFallback: Camera,
       color: "from-purple-500 to-pink-500",
-      stats: { reels: "300+", views: "5M+", duration: "30-60 sec" },
-      features: ["Quick facts", "Visual learning", "Daily content"]
+      stats: { reels: "150+", views: "50M+", duration: "Few seconds" },
+      features: ["Quick facts", "Visual learning", "Daily content"],
+      link: "https://www.instagram.com/brainybitzs?igsh=dDV4dmFvMTBjdGl2",
+      buttonText: "View Reels on Instagram",
+      about: "BrainyBitzs Instagram is home to 150+ reels that have reached over 50M views worldwide. Each reel delivers fascinating facts, GK, and knowledge in just a few seconds, making education fun and viral."
     },
     {
       title: "Interactive Quizzes",
@@ -32,7 +38,10 @@ const ContentShowcase = () => {
       iconFallback: Brain,
       color: "from-blue-500 to-cyan-500",
       stats: { quizzes: "100+", attempts: "50K+", difficulty: "All levels" },
-      features: ["Instant feedback", "Progress tracking", "Leaderboards"]
+      features: ["Instant feedback", "Progress tracking", "Leaderboards"],
+      link: "#quizzes",
+      buttonText: "Take Quiz",
+      about: "Challenge yourself with our interactive quizzes covering science, technology, and general knowledge. Perfect for testing what you've learned from our videos and reels."
     }
   ];
 
@@ -56,11 +65,14 @@ const ContentShowcase = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {contentTypes.map((content, index) => (
             <Card key={content.title} className="content-card p-0 overflow-hidden group">
               {/* Card Header with Icon */}
-              <div className={`bg-gradient-to-r ${content.color} p-6 relative overflow-hidden`}>
+              <div 
+                className={`bg-gradient-to-r ${content.color} p-6 relative overflow-hidden cursor-pointer`}
+                onClick={() => window.open(content.link, '_blank')}
+              >
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                     <img 
@@ -94,6 +106,12 @@ const ContentShowcase = () => {
                 </div>
               </div>
 
+              {/* About Section */}
+              <div className="p-6 border-b border-border">
+                <h4 className="font-semibold mb-3 text-foreground">About {content.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{content.about}</p>
+              </div>
+
               {/* Features */}
               <div className="p-6">
                 <ul className="space-y-3 mb-6">
@@ -105,8 +123,12 @@ const ContentShowcase = () => {
                   ))}
                 </ul>
 
-                <Button variant="outline" className="w-full group">
-                  Explore {content.title}
+                <Button 
+                  variant="outline" 
+                  className="w-full group"
+                  onClick={() => window.open(content.link, '_blank')}
+                >
+                  {content.buttonText}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -140,14 +162,21 @@ const ContentShowcase = () => {
                   <span>500K+ Views</span>
                 </div>
               </div>
-              <Button variant="hero" size="lg">
+              <Button 
+                variant="hero" 
+                size="lg"
+                onClick={() => window.open('https://youtube.com/@brainybitzs?feature=shared', '_blank')}
+              >
                 <Play className="w-5 h-5" />
                 Watch Now
               </Button>
             </div>
             
             <div className="relative">
-              <div className="aspect-video bg-gradient-primary rounded-xl flex items-center justify-center relative overflow-hidden">
+              <div 
+                className="aspect-video bg-gradient-primary rounded-xl flex items-center justify-center relative overflow-hidden cursor-pointer"
+                onClick={() => window.open('https://youtube.com/@brainybitzs?feature=shared', '_blank')}
+              >
                 <Play className="w-16 h-16 text-white/80 hover:text-white hover:scale-110 transition-all cursor-pointer" />
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute bottom-4 left-4 right-4">
